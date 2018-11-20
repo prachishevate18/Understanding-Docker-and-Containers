@@ -1,0 +1,349 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red86\green32\blue244;\red252\green50\blue32;
+}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c41680\c25960\c96645;\cssrgb\c100000\c29541\c16201;
+}
+\margl1440\margr1440\vieww18640\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 Prachis-MacBook-Pro:~ prachishevate$ docker version\
+Client: Docker Engine - Community\
+ Version:           18.09.0\
+ API version:       1.39\
+ Go version:        go1.10.4\
+ Git commit:        4d60db4\
+ Built:             Wed Nov  7 00:47:43 2018\
+ OS/Arch:           darwin/amd64\
+ Experimental:      false\
+\
+Server: Docker Engine - Community\
+ Engine:\
+  Version:          18.09.0\
+  API version:      1.39 (minimum version 1.12)\
+  Go version:       go1.10.4\
+  Git commit:       4d60db4\
+  Built:            Wed Nov  7 00:55:00 2018\
+  OS/Arch:          linux/amd64\
+  Experimental:     false\
+Prachis-MacBook-Pro:~ prachishevate$ docker run hello-world\
+\
+Hello from Docker!\
+This message shows that your installation appears to be working correctly.\
+\
+To generate this message, Docker took the following steps:\
+ 1. The Docker client contacted the Docker daemon.\
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.\
+    (amd64)\
+ 3. The Docker daemon created a new container from that image which runs the\
+    executable that produces the output you are currently reading.\
+ 4. The Docker daemon streamed that output to the Docker client, which sent it\
+    to your terminal.\
+\
+To try something more ambitious, you can run an Ubuntu container with:\
+ $ docker run -it ubuntu bash\
+\
+Share images, automate workflows, and more with a free Docker ID:\
+ https://hub.docker.com/\
+\
+For more examples and ideas, visit:\
+ https://docs.docker.com/get-started/\
+\
+Prachis-MacBook-Pro:~ prachishevate$ docker pull busybox\
+Using default tag: latest\
+latest: Pulling from library/busybox\
+90e01955edcd: Pull complete \
+Digest: sha256:2a03a6059f21e150ae84b0973863609494aad70f0a80eaeb64bddd8d92465812\
+Status: Downloaded newer image for busybox:latest\
+Prachis-MacBook-Pro:~ prachishevate$ docker images\
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE\
+busybox             latest              59788edf1f3e        7 weeks ago         1.15MB\
+hello-world         latest              4ab4c602aa5e        2 months ago        1.84kB\
+Prachis-MacBook-Pro:~ prachishevate$ docker run busybox\
+Prachis-MacBook-Pro:~ prachishevate$ docker run busybox echo "hello from busybox"\
+hello from busybox\
+Prachis-MacBook-Pro:~ prachishevate$ docker ps\
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES\
+Prachis-MacBook-Pro:~ prachishevate$ docker ps -a\
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES\
+78c58ecf737b        busybox             "echo 'hello from bu\'85"   4 minutes ago       Exited (0) 4 minutes ago                        jolly_einstein\
+ee38abadac11        busybox             "sh"                     5 minutes ago       Exited (0) 5 minutes ago                        kind_kare\
+e48ef0146d84        hello-world         "/hello"                 9 minutes ago       Exited (0) 9 minutes ago                        nostalgic_archimedes\
+9f21e61422d4        hello-world         "/hello"                 39 minutes ago      Exited (0) 39 minutes ago                       flamboyant_darwin\
+fa629e7854d8        hello-world         "/hello"                 39 minutes ago      Exited (0) 39 minutes ago                       epic_wing\
+Prachis-MacBook-Pro:~ prachishevate$ docker run -it busybox sh\
+/ # ls\
+
+\f1\b \cf3 bin
+\f0\b0 \cf2    
+\f1\b \cf3 dev
+\f0\b0 \cf2    
+\f1\b \cf3 etc
+\f0\b0 \cf2    
+\f1\b \cf3 home
+\f0\b0 \cf2   
+\f1\b \cf3 proc
+\f0\b0 \cf2   
+\f1\b \cf3 root
+\f0\b0 \cf2   
+\f1\b \cf3 sys
+\f0\b0 \cf2    
+\f1\b \cf3 tmp
+\f0\b0 \cf2    
+\f1\b \cf3 usr
+\f0\b0 \cf2    
+\f1\b \cf3 var
+\f0\b0 \cf2 \
+/ # uptime\
+ 19:26:49 up 43 min,  0 users,  load average: 0.09, 0.02, 0.00\
+/ # pwd\
+/\
+/ # rm -rf bin\
+/ # ls\
+sh: ls: not found\
+/ # uptime\
+sh: uptime: not found\
+/ # exit\
+Prachis-MacBook-Pro:~ prachishevate$ docker run -it busybox sh\
+/ # ls\
+
+\f1\b \cf3 bin
+\f0\b0 \cf2    
+\f1\b \cf3 dev
+\f0\b0 \cf2    
+\f1\b \cf3 etc
+\f0\b0 \cf2    
+\f1\b \cf3 home
+\f0\b0 \cf2   
+\f1\b \cf3 proc
+\f0\b0 \cf2   
+\f1\b \cf3 root
+\f0\b0 \cf2   
+\f1\b \cf3 sys
+\f0\b0 \cf2    
+\f1\b \cf3 tmp
+\f0\b0 \cf2    
+\f1\b \cf3 usr
+\f0\b0 \cf2    
+\f1\b \cf3 var
+\f0\b0 \cf2 \
+/ # uptime\
+ 19:27:58 up 44 min,  0 users,  load average: 0.02, 0.02, 0.00\
+/ # exit\
+Prachis-MacBook-Pro:~ prachishevate$ docker rm ee38abadac11 fa629e7854d8\
+ee38abadac11\
+fa629e7854d8\
+Prachis-MacBook-Pro:~ prachishevate$ docker rm $(docker ps -a -q -f status=exited)\
+e2b722840f3d\
+e318b065e896\
+78c58ecf737b\
+e48ef0146d84\
+9f21e61422d4\
+Prachis-MacBook-Pro:~ prachishevate$ docker container prune\
+WARNING! This will remove all stopped containers.\
+Are you sure you want to continue? [y/N] y\
+Total reclaimed space: 0B\
+Prachis-MacBook-Pro:~ prachishevate$ docker rmi\
+"docker rmi" requires at least 1 argument.\
+See 'docker rmi --help'.\
+\
+Usage:  docker rmi [OPTIONS] IMAGE [IMAGE...]\
+\
+Remove one or more images\
+Prachis-MacBook-Pro:~ prachishevate$ docker rmi busybox\
+Untagged: busybox:latest\
+Untagged: busybox@sha256:2a03a6059f21e150ae84b0973863609494aad70f0a80eaeb64bddd8d92465812\
+Deleted: sha256:59788edf1f3e78cd0ebe6ce1446e9d10788225db3dedcfd1a59f764bad2b2690\
+Deleted: sha256:8a788232037eaf17794408ff3df6b922a1aedf9ef8de36afdae3ed0b0381907b\
+Prachis-MacBook-Pro:~ prachishevate$ docker run --rm prakhar1989/static-site\
+Unable to find image 'prakhar1989/static-site:latest' locally\
+latest: Pulling from prakhar1989/static-site\
+d4bce7fd68df: Pull complete \
+a3ed95caeb02: Pull complete \
+573113c4751a: Pull complete \
+31917632be33: Pull complete \
+77e66f18af1c: Pull complete \
+df3f108f3ade: Pull complete \
+d7a279eb19f5: Pull complete \
+e798589c05c5: Pull complete \
+78eeaf458ae0: Pull complete \
+Digest: sha256:48ca6254c16b81a7960ad874e901f027fbcaac66509cfd79ce8f3f6da424d3b1\
+Status: Downloaded newer image for prakhar1989/static-site:latest\
+Nginx is running...\
+^CPrachis-MacBook-Pro:~ prachishevate$ docker run -d -P --name static-site prakhar1989/static-site\
+5659b41cb0a32831cb36932e94a7ebc19be749ef36827e664c229a8375bf0b90\
+Prachis-MacBook-Pro:~ prachishevate$ docker port static-site\
+443/tcp -> 0.0.0.0:32768\
+80/tcp -> 0.0.0.0:32769\
+Prachis-MacBook-Pro:~ prachishevate$ docker-machine ip default\
+Docker machine "default" does not exist. Use "docker-machine ls" to list machines. Use "docker-machine create" to add a new one.\
+Prachis-MacBook-Pro:~ prachishevate$ docker run -p 8888:80 prakhar1989/static-site\
+Nginx is running...\
+docker stop static-site\
+\
+^CPrachis-MacBook-Pro:~ prachishevate$ docker run -p 8888:80 prakhar1989/static-site\
+Nginx is running...\
+^CPrachis-MacBook-Pro:~ prachishevate$ docker images\
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE\
+hello-world               latest              4ab4c602aa5e        2 months ago        1.84kB\
+prakhar1989/static-site   latest              f01030e1dcf3        2 years ago         134MB\
+Prachis-MacBook-Pro:~ prachishevate$ docker pull ubuntu:12.04\
+12.04: Pulling from library/ubuntu\
+d8868e50ac4c: Pull complete \
+83251ac64627: Pull complete \
+589bba2f1b36: Pull complete \
+d62ecaceda39: Pull complete \
+6d93b41cfc6b: Pull complete \
+Digest: sha256:18305429afa14ea462f810146ba44d4363ae76e4c8dfc38288cf73aa07485005\
+Status: Downloaded newer image for ubuntu:12.04\
+Prachis-MacBook-Pro:~ prachishevate$ docker search\
+"docker search" requires exactly 1 argument.\
+See 'docker search --help'.\
+\
+Usage:  docker search [OPTIONS] TERM\
+\
+Search the Docker Hub for images\
+Prachis-MacBook-Pro:~ prachishevate$ git clone htpps://github.com/prakhar1989/docker-curriculum\
+Cloning into 'docker-curriculum'...\
+fatal: Unable to find remote helper for 'htpps'\
+Prachis-MacBook-Pro:~ prachishevate$ git clone https://github.com/prakhar1989/docker-curriculum\
+Cloning into 'docker-curriculum'...\
+remote: Enumerating objects: 1262, done.\
+remote: Total 1262 (delta 0), reused 0 (delta 0), pack-reused 1262\
+Receiving objects: 100% (1262/1262), 8.15 MiB | 6.53 MiB/s, done.\
+Resolving deltas: 100% (678/678), done.\
+Prachis-MacBook-Pro:~ prachishevate$ cd docker-curriculum/flask-app\
+Prachis-MacBook-Pro:flask-app prachishevate$ pwd\
+/Users/prachishevate/docker-curriculum/flask-app\
+Prachis-MacBook-Pro:flask-app prachishevate$ FROM python:3-onbuild\
+FROM: can't read /var/mail/python:3-onbuild\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker pull python:3\
+3: Pulling from library/python\
+54f7e8ac135a: Pull complete \
+d6341e30912f: Pull complete \
+087a57faf949: Pull complete \
+5d71636fb824: Pull complete \
+0c1db9598990: Pull complete \
+bfb904e99f24: Pull complete \
+78a3d3a96a32: Pull complete \
+885a0ed92c89: Pull complete \
+dd7cc9ace242: Pull complete \
+Digest: sha256:3870d35b962a943df72d948580fc66ceaaee1c4fbd205930f32e0f0760eb1077\
+Status: Downloaded newer image for python:3\
+Prachis-MacBook-Pro:flask-app prachishevate$ FROM python:3-onbuild\
+FROM: can't read /var/mail/python:3-onbuild\
+Prachis-MacBook-Pro:flask-app prachishevate$ cat Dockerfile\
+# Instructions copied from - https://hub.docker.com/_/python/\
+FROM python:3-onbuild\
+\
+# tell the port number the container should expose\
+EXPOSE 5000\
+\
+# run the command\
+CMD ["python", "./app.py"]\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker build -t prachishevate/catnip .\
+Sending build context to Docker daemon  8.704kB\
+Step 1/3 : FROM python:3-onbuild\
+3-onbuild: Pulling from library/python\
+1c7fe136a31e: Pull complete \
+ece825d3308b: Pull complete \
+06854774e2f3: Pull complete \
+f0db43b9b8da: Pull complete \
+2d21c767035c: Pull complete \
+e10b68fb77e6: Pull complete \
+e2c0fb34dff3: Pull complete \
+e96bc319bce0: Pull complete \
+490280dbcfb7: Pull complete \
+Digest: sha256:76df62c122c910751d8cd3101f8e3da39efd4ee828686b7ff0b5a5b1d967553f\
+Status: Downloaded newer image for python:3-onbuild\
+# Executing 3 build triggers\
+ ---> Running in 531739892a47\
+Collecting Flask==0.10.1 (from -r requirements.txt (line 1))\
+  Downloading https://files.pythonhosted.org/packages/db/9c/149ba60c47d107f85fe52564133348458f093dd5e6b57a5b60ab9ac517bb/Flask-0.10.1.tar.gz (544kB)\
+Collecting Werkzeug>=0.7 (from Flask==0.10.1->-r requirements.txt (line 1))\
+  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)\
+Collecting Jinja2>=2.4 (from Flask==0.10.1->-r requirements.txt (line 1))\
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)\
+Collecting itsdangerous>=0.21 (from Flask==0.10.1->-r requirements.txt (line 1))\
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl\
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.4->Flask==0.10.1->-r requirements.txt (line 1))\
+  Downloading https://files.pythonhosted.org/packages/08/04/f2191b50fb7f0712f03f064b71d8b4605190f2178ba02e975a87f7b89a0d/MarkupSafe-1.1.0-cp36-cp36m-manylinux1_x86_64.whl\
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, itsdangerous, Flask\
+  Running setup.py install for Flask: started\
+    Running setup.py install for Flask: finished with status 'done'\
+Successfully installed Flask-0.10.1 Jinja2-2.10 MarkupSafe-1.1.0 Werkzeug-0.14.1 itsdangerous-1.1.0\
+\cf4 You are using pip version 10.0.1, however version 18.1 is available.\cf2 \
+\cf4 You should consider upgrading via the 'pip install --upgrade pip' command.\cf2 \
+Removing intermediate container 531739892a47\
+ ---> 36aaf32cb304\
+Step 2/3 : EXPOSE 5000\
+ ---> Running in 1f56fb2f048f\
+Removing intermediate container 1f56fb2f048f\
+ ---> c71751a65087\
+Step 3/3 : CMD ["python", "./app.py"]\
+ ---> Running in 2f975cd94265\
+Removing intermediate container 2f975cd94265\
+ ---> 2e08a1df3722\
+Successfully built 2e08a1df3722\
+Successfully tagged prachishevate/catnip:latest\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker images\
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE\
+prachishevate/catnip      latest              2e08a1df3722        11 seconds ago      700MB\
+python                    3                   1e80caffd59e        3 days ago          923MB\
+hello-world               latest              4ab4c602aa5e        2 months ago        1.84kB\
+python                    3-onbuild           292ed8dee366        4 months ago        691MB\
+ubuntu                    12.04               5b117edd0b76        19 months ago       104MB\
+prakhar1989/static-site   latest              f01030e1dcf3        2 years ago         134MB\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker run -p 8888:5000 prachishevate/catnip\
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)\
+^CPrachis-MacBook-Pro:flask-app prachishevate$ docker port prachishevate/catnip\
+Error: No such container: prachishevate/catnip\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker port python\
+Error: No such container: python\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker ps\
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS                                           NAMES\
+5659b41cb0a3        prakhar1989/static-site   "./wrapper.sh"      About an hour ago   Up About an hour    0.0.0.0:32769->80/tcp, 0.0.0.0:32768->443/tcp   static-site\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker run -p 8888:5000 prachishevate/catnip\
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)\
+^CPrachis-MacBook-Pro:flask-app prachishevate$ docker run -p 8888:5000 prachishevate/catnip\
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)\
+^CPrachis-MacBook-Pro:flask-app prachishevate$ docker build -t prachishevate/catnip .\
+Sending build context to Docker daemon  9.728kB\
+Step 1/3 : FROM python:3-onbuild\
+# Executing 3 build triggers\
+ ---> Using cache\
+ ---> Using cache\
+ ---> 63db53ea8638\
+Step 2/3 : EXPOSE 5000\
+ ---> Running in 463a9540d1bb\
+Removing intermediate container 463a9540d1bb\
+ ---> f9244f4d7274\
+Step 3/3 : CMD ["python", "./app.py"]\
+ ---> Running in 4fac92bc410b\
+Removing intermediate container 4fac92bc410b\
+ ---> 4ab273432f50\
+Successfully built 4ab273432f50\
+Successfully tagged prachishevate/catnip:latest\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker run -p 8888:5000 prachishevate/catnip\
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)\
+^CPrachis-MacBook-Pro:flask-app prachishevate$ docker push prachishevate/catnip\
+The push refers to repository [docker.io/prachishevate/catnip]\
+aa434d16030d: Pushed \
+e8a31b8035de: Pushed \
+871625e4b32b: Pushed \
+29778035860f: Mounted from library/python \
+fc88d2431f4d: Mounted from library/python \
+1dc1b82fa010: Mounted from library/python \
+09e3fd9cf357: Mounted from library/python \
+138d1921c15b: Mounted from library/python \
+d714f65bc280: Mounted from library/python \
+fd6060e25706: Mounted from library/python \
+d7ed640784f1: Mounted from library/python \
+1618a71a1198: Mounted from library/python \
+latest: digest: sha256:65edaf82a6b4779cf26864f83b8309880a4171329207e548a1780eb2df4db113 size: 2840\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker login\
+Authenticating with existing credentials...\
+Login Succeeded\
+Prachis-MacBook-Pro:flask-app prachishevate$ docker run -p 8888:5000 prachishevate/catnip\
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)\
+^CPrachis-MacBook-Pro:flask-app prachishevate$}
